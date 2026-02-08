@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: ninmah-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "cd backend/python && pip install -r requirements.txt"
+    startCommand: "cd backend/python && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: meta-llama/llama-3.1-8b-instruct:free
+      - key: NINMAH_ACCESS_TOKEN
+        sync: false
+      - key: BACKEND_PORT
+        value: 8000
+      - key: LOG_LEVEL
+        value: INFO
+      - key: ALLOWED_ORIGINS
+        value: https://ninmah.vercel.app,http://localhost:5173

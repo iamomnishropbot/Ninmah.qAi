@@ -1,0 +1,28 @@
+/**
+ * ============================================
+ * NINMAH - First of the Ainunnaki
+ * App.css - Main App Styles
+ * ============================================
+ */
+
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.scene-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Ensure content is above scene */
+.app > *:not(.scene-container) {
+  position: relative;
+  z-index: 1;
+}

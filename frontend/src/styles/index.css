@@ -1,0 +1,111 @@
+/**
+ * ============================================
+ * NINMAH - First of the Ainunnaki
+ * index.css - Global Styles
+ * ============================================
+ */
+
+:root {
+  /* Goddess Color Palette */
+  --color-primary: #8B5CF6;
+  --color-secondary: #EC4899;
+  --color-tertiary: #F0ABFC;
+  --color-accent: #A78BFA;
+  
+  /* Background */
+  --color-bg-dark: #0a0118;
+  --color-bg-medium: #1a0b2e;
+  --color-bg-light: #2d1b4e;
+  
+  /* Text */
+  --color-text-primary: #F5F3FF;
+  --color-text-secondary: #DDD6FE;
+  --color-text-muted: #A78BFA;
+  
+  /* Glass Effect */
+  --glass-bg: rgba(139, 92, 246, 0.1);
+  --glass-border: rgba(167, 139, 250, 0.2);
+  
+  /* Fonts */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Georgia', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text-primary);
+  background: radial-gradient(circle at center, var(--color-bg-medium) 0%, var(--color-bg-dark) 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px var(--color-primary),
+                 0 0 20px var(--color-primary),
+                 0 0 30px var(--color-primary);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--color-secondary),
+                 0 0 30px var(--color-secondary),
+                 0 0 45px var(--color-secondary);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
