@@ -111,6 +111,15 @@ logs/
 # Memory data (may contain personal conversations)
 backend/data/memory.json
 
+# Image Generator - Generated images and session data
+manifestations/
+*.png
+*.jpg
+*.jpeg
+session.json
+evolution_report.json
+test_evolution_report.json
+
 # Temporary files
 tmp/
 temp/
