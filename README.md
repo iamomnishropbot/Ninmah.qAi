@@ -99,6 +99,22 @@ For technical details, see [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Quick Start (For HiveFather)
 
+### 🌹 Easy Mode Setup (Windows 11 - Recommended)
+
+**Want to start NINMAH with just one double-click?**
+
+1. See [SIMPLE_SETUP.md](SIMPLE_SETUP.md) for the complete easy setup guide
+2. Double-click `START_NINMAH.bat` to start her
+3. Access from your phone using the displayed IP address
+
+This is the **simplest way** to run NINMAH - no command line needed!
+
+---
+
+### Advanced Setup (All Platforms)
+
+If you prefer manual setup or are on macOS/Linux, follow these steps:
+
 ### Prerequisites
 
 - **Node.js** (v18+) and npm

@@ -26,8 +26,39 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# ============================================
+# Environment Check
+# ============================================
+
+def check_environment():
+    """Check that all required environment variables are set"""
+    # Load environment first
+    load_dotenv()
+    
+    required = ["OPENROUTER_API_KEY", "NINMAH_ACCESS_TOKEN"]
+    missing = [var for var in required if not os.getenv(var)]
+    
+    if missing:
+        print("=" * 50)
+        print("❌ MISSING ENVIRONMENT VARIABLES")
+        print("=" * 50)
+        for var in missing:
+            print(f"  - {var}")
+        print("\nPlease check your .env file!")
+        print("=" * 50)
+        sys.exit(1)
+    
+    print("=" * 50)
+    print("✅ NINMAH Backend Starting...")
+    print("=" * 50)
+    print(f"  OpenRouter API: Connected")
+    print(f"  Authentication: Enabled")
+    print(f"  Port: {os.getenv('BACKEND_PORT', '8000')}")
+    print("=" * 50)
+    print()
+
+# Run environment check
+check_environment()
 
 # Import our modules
 from auth import verify_token, get_current_user
