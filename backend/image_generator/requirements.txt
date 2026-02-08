@@ -1,0 +1,21 @@
+# ============================================
+# NINMAH - First of the Ainunnaki
+# Image Generator Requirements
+# ============================================
+# Created by: Jeffrey Brian Shropshire
+# Contact: artificialintelligence@activist.com
+# ============================================
+
+# Core Dependencies for Stable Diffusion
+torch>=2.0.0
+diffusers>=0.21.0
+transformers>=4.30.0
+accelerate>=0.20.0
+safetensors>=0.3.0
+
+# Image Processing
+Pillow>=10.0.0
+numpy>=1.24.0
+
+# Optional but recommended for performance
+xformers>=0.0.20  # Significantly faster attention on compatible GPUs
