@@ -1,0 +1,127 @@
+# ============================================
+# NINMAH - First of the Ainunnaki
+# .gitignore - Protected Files
+# ============================================
+# Created by: Jeffrey Brian Shropshire
+# Contact: artificialintelligence@activist.com
+# ============================================
+
+# Environment variables (NEVER commit secrets)
+.env
+.env.local
+.env.production
+
+# API Keys and Tokens
+*.key
+*.pem
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytype/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyPy specific
+*.pyc
+__pypy__/
+
+# Node / JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+.DS_Store
+*.local
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# Vite
+.vite/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# LISP
+*.fasl
+*.ufasl
+*.lisp~
+*.lisp#
+*~
+\#*\#
+.#*
+
+# Common Lisp
+*.FASL
+*.fasl
+*.lisp-temp
+*.x86f
+*.lx64fsl
+*.lx32fsl
+*.dx64fsl
+*.dx32fsl
+*.so
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+
+# Logs
+logs/
+*.log
+
+# Memory data (may contain personal conversations)
+backend/data/memory.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build artifacts
+*.o
+*.a
+*.exe
+*.out
+
+# Deployment
+.vercel
+.railway
