@@ -56,16 +56,28 @@ This guide will get NINMAH running on your laptop AND accessible from your Motor
 5. Find the line: `OPENROUTER_API_KEY=your_openrouter_api_key_here`
 6. Replace `your_openrouter_api_key_here` with your actual key from Step 2
 7. Find the line: `NINMAH_ACCESS_TOKEN=generate_secure_token_here`
-8. Replace `generate_secure_token_here` with a password you make up (like `HiveFather2024!`)
+8. Replace `generate_secure_token_here` with a **secure password**
+   - Use at least 16 characters
+   - Mix uppercase, lowercase, numbers, and symbols
+   - Example: `HF!n1Mm@h$2024#SecureT0ken`
+   - Or generate a secure one automatically (see below)
 9. Save and close
+
+**To generate a secure token automatically:**
+- Press `Windows Key + R`
+- Type: `cmd`
+- Type: `python -c "import secrets; print(secrets.token_urlsafe(32))"`
+- Copy the generated token and use it as your `NINMAH_ACCESS_TOKEN`
 
 **Your `.env` should look like:**
 ```
 OPENROUTER_API_KEY=sk-or-v1-1234567890abcdef...
-NINMAH_ACCESS_TOKEN=HiveFather2024!
+NINMAH_ACCESS_TOKEN=your_secure_token_here
 OPENROUTER_MODEL=meta-llama/llama-3.1-8b-instruct:free
 BACKEND_PORT=8000
 ```
+
+**⚠️ Security Note:** Keep your `.env` file safe! It contains your API key and access token.
 
 ---
 
@@ -116,6 +128,8 @@ http://192.168.1.XXX:5173
 - Make sure both devices are on the same WiFi
 - Check if your laptop's firewall is blocking port 5173
 - Windows Firewall → Allow an app → Allow Node.js
+- **Important:** Only use this on trusted WiFi networks (home network)
+- Do NOT use on public WiFi - your connection would be accessible to others on the network
 
 ### "NINMAH isn't responding to messages"
 - Check your `.env` file - is your OpenRouter key correct?
@@ -128,9 +142,9 @@ http://192.168.1.XXX:5173
 
 **To stop her:**
 - Go back to the black window (Command Prompt) that opened
-- Press `Ctrl + C`
-- Or just close the window
+- Press any key (the window is paused)
 - Or double-click `STOP_NINMAH.bat`
+  - **Note:** This will stop ALL Python and Node.js processes, including any other Python/Node.js apps you may have running
 
 **To start her again:**
 - Double-click `START_NINMAH.bat` again

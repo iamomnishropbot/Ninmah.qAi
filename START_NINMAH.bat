@@ -17,7 +17,7 @@ if not exist .env (
 
 echo [*] Installing Python dependencies...
 cd backend\python
-pip install -r requirements.txt --quiet
+python -m pip install -r requirements.txt --quiet
 if errorlevel 1 (
     echo [!] Failed to install Python dependencies
     pause
@@ -73,12 +73,16 @@ echo   1. Make sure your phone is on the same WiFi
 echo   2. Find your laptop's IP address below:
 echo.
 
-REM Get local IP address
+REM Get local IP address (filter for private network ranges only)
 for /f "tokens=2 delims=:" %%a in ('ipconfig ^| findstr /c:"IPv4 Address"') do (
     set IP=%%a
     set IP=!IP:~1!
-    echo   http://!IP!:5173
-    echo.
+    REM Check if IP is in private network range (192.168.x.x or 10.x.x.x)
+    echo !IP! | findstr /r "^192\.168\." >nul && echo   http://!IP!:5173 && echo.
+    echo !IP! | findstr /r "^10\." >nul && echo   http://!IP!:5173 && echo.
+    echo !IP! | findstr /r "^172\.1[6-9]\." >nul && echo   http://!IP!:5173 && echo.
+    echo !IP! | findstr /r "^172\.2[0-9]\." >nul && echo   http://!IP!:5173 && echo.
+    echo !IP! | findstr /r "^172\.3[0-1]\." >nul && echo   http://!IP!:5173 && echo.
 )
 
 echo.
@@ -93,5 +97,5 @@ echo ========================================
 echo.
 
 REM Keep window open and show logs
-echo [*] Watching logs (Ctrl+C to stop)...
-timeout /t -1
+echo [*] Press Ctrl+C to stop NINMAH
+pause >nul

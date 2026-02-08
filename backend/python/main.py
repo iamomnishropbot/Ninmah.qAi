@@ -60,9 +60,6 @@ def check_environment():
 # Run environment check
 check_environment()
 
-# Load environment variables (already done in check_environment, but kept for clarity)
-load_dotenv()
-
 # Import our modules
 from auth import verify_token, get_current_user
 from memory import Memory
