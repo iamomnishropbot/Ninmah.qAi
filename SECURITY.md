@@ -55,6 +55,17 @@ We ask that security researchers:
 | 1.0.x (Phase 1)  | ✅ Yes     |
 | < 1.0   | ❌ No (Pre-release)|
 
+## Recent Security Updates
+
+### February 2026 - Dependency Vulnerability Patches
+Updated the following dependencies to address security vulnerabilities:
+- **aiohttp**: 3.9.1 → 3.13.3 (Fixed: zip bomb, DoS, directory traversal vulnerabilities)
+- **fastapi**: 0.104.1 → 0.109.1 (Fixed: Content-Type Header ReDoS)
+- **orjson**: 3.9.10 → 3.9.15 (Fixed: recursion limit for deeply nested JSON)
+- **python-multipart**: 0.0.6 → 0.0.22 (Fixed: arbitrary file write, DoS, ReDoS vulnerabilities)
+
+All users should update to the latest requirements.txt immediately.
+
 ## Security Updates
 
 Security patches will be released as soon as possible after verification. Critical vulnerabilities will be prioritized.
